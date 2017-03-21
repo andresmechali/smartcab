@@ -84,6 +84,13 @@ class LearningAgent(Agent):
 		# When learning, check if the 'state' is not in the Q-table
 		# If it is not, create a new dictionary for that state
 		#	Then, for each action available, set the initial Q-value to 0.0
+		
+		if state in self.Q.keys():
+			pass
+		else:
+			self.Q[state] = {}
+			for a in self.env.valid_actions:
+				self.Q[state][a] = 0.0
 
 		return
 
